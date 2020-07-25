@@ -15,18 +15,43 @@
             <li class="item">Veritatis expedita aperiam placeat eaque?</li>
             <li class="item">Iure voluptate unde nihil explicabo.</li>
         </ul>
+        <button id="addBtn">Add New Item</button>
     </div>
     <script>
-        document.getElementById('first').addEventListener('click', function (event) {
-            console.log('first item clicked');
-            // event.stopPropagation();
+        // document.getElementById('first').addEventListener('click', function (event) {
+        //     console.log('first item clicked');
+        //     // event.stopPropagation();
+        // })
+        // document.getElementById('myList').addEventListener('click', function (event) {
+        //     console.log('UL clicked');
+        //     event.stopPropagation();
+        // })
+        // document.getElementById('container').addEventListener('click', function (event) {
+        //     console.log('container clicked');
+        // })
+
+        // var items = document.getElementsByClassName('item');
+        // for (let i = 0; i < items.length; i++) {
+        //     const item = items[i];
+        //     // console.log(item);
+        //     item.addEventListener('click', function (event) {
+        //         // console.log(this, event.target.innerText);
+        //         // console.log(event.target.innerText);
+        //         // console.log(event.target.parentNode);
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        document.getElementById('addBtn').addEventListener('click', function (event) {
+            var itemParent = document.getElementById('myList');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'Brand New Item';
+            itemParent.appendChild(newItem);
         })
+
         document.getElementById('myList').addEventListener('click', function (event) {
-            console.log('UL clicked');
-            event.stopPropagation();
-        })
-        document.getElementById('container').addEventListener('click', function (event) {
-            console.log('container clicked');
+            // console.log(this, event.target);
+            event.target.parentNode.removeChild(event.target);
         })
     </script>
 </body>
